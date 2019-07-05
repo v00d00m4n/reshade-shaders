@@ -385,7 +385,7 @@ float3 LevelsPlusPass(float4 vpos : SV_Position, float2 texcoord : TexCoord) : S
 
 	if (EnableLevels == true)
 	{
-		OutputColor = pow( abs(((InputColor + (ColorRangeShift * ColorRangeShiftSwitch)) - InputBlackPoint)/(InputWhitePoint - InputBlackPoint)) , InputGamma) * (OutputWhitePoint - OutputBlackPoint) + OutputBlackPoint;
+		OutputColor = pow( ((InputColor + (ColorRangeShift * ColorRangeShiftSwitch)) - InputBlackPoint)/(InputWhitePoint - InputBlackPoint) , InputGamma) * (OutputWhitePoint - OutputBlackPoint) + OutputBlackPoint;
 	} else {
 		OutputColor = InputColor;
 	}
